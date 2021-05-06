@@ -1,4 +1,4 @@
-import * as readline from "readline";
+import * as readline from 'readline';
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -13,8 +13,8 @@ export function readlinePromise(message: string) {
       rl.close();
     });
 
-    rl.on("close", function () {
-      resolve(ans || "");
+    rl.on('close', function () {
+      resolve(ans || '');
     });
   });
 }

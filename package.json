@@ -11,7 +11,7 @@
     "delete": "rimraf dist",
     "clean": "rimraf package-lock.json node_modules",
     "cleanAndUpdate": "ncu -a && npm run clean && ncu -d -a && npm install",
-    "build": " npm run build-ts && npm run tslint",
+    "build": " npm run build-ts && npm run tslint && cp -r src/template dist",
     "build:prod": "tsc -p tsconfig.prod.json --removeComments",
     "build-ts": "tsc --removeComments",
     "watch-ts": "tsc --removeComments -w",

@@ -1,8 +1,8 @@
-import { {bigName}Pipe } from './{name}.pipe';
+import { {bigName} } from './{underTest}{name}';
 
-describe('{bigName}Pipe', () => {
+describe('{bigName}', () => {
   it('create an instance', () => {
-    const pipe = new {bigName}Pipe();
+    const pipe = new {bigName}({params});
     expect(pipe).toBeTruthy();
   });
 });

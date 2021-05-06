@@ -1,8 +1,8 @@
-import { {bigName}Directive } from './{name}.directive';
+import { {bigName} } from './{underTest}{name}';
 
-describe('{bigName}Directive', () => {
+describe('{bigName}', () => {
   it('should create an instance', () => {
-    const directive = new {bigName}Directive();
+    const directive = new {bigName}({params});
     expect(directive).toBeTruthy();
   });
 });

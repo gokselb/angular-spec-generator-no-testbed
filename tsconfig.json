@@ -1,18 +1,14 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
-        "moduleResolution": "node",
-        "sourceMap": true,
-        "outDir": "dist",
-        "typeRoots": [
-            "node_modules/@types"
-        ]
-    },
-    "include": [
-        "src/**/*.ts"
-    ],
-    "exclude": []
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "typeRoots": ["node_modules/@types"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": []
 }
 // "baseUrl": "src",
 // "paths": {
