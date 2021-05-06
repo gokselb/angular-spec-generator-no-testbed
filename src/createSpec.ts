@@ -13,8 +13,6 @@ export interface SpecType {
 
 export const createSpec = async (array: SpecType[], isforce: boolean) => {
   for (const file of array) {
-    // console.log(file);
-    // console.log(fs.readFileSync('./template/component.template').toString());
     let targetUrl = path.join(file.dir, `${file.name}.spec.ts`);
     if (file.underTest) {
       if (!fs.existsSync(path.join(file.dir, 'tests'))) {
@@ -80,10 +78,6 @@ function findParameters(
   };
   const constructorMatch = fileContext.match(/constructor\(([\S\s]*?){/g);
   if (constructorMatch) {
-    console.log();
-    console.log();
-    console.log();
-    console.log(constructorMatch[0]);
     const parameters = constructorMatch[0].match(/(private|public|_)(.*)\s|,/g);
     const classes: string[] = [];
     if (parameters) {
@@ -146,12 +140,8 @@ function findParameters(
               break;
           }
         }
-        console.log(className);
       });
     }
-    console.log();
-    console.log();
-    console.log();
   }
   return result;
 }
@@ -169,7 +159,6 @@ function getClassName(fileContext: string): string | boolean {
     className = className.replace(/{|</, '');
     className = className.trim();
   }
-  console.log('###', className, '###');
   return className;
 }
 
