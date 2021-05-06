@@ -4,16 +4,13 @@
   // 如需詳細資訊，請瀏覽: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-
     {
       "type": "node",
       "request": "launch",
       "name": "test spec generator",
       "program": "${workspaceFolder}/dist/index.js",
       "sourceMaps": true,
-      "args": [
-        "/Users/zouyoushun/Project/angular-spec-generator/test-spec",
-      ]
+      "args": ["/Users/zouyoushun/Project/angular-spec-generator/test-spec"]
     },
     {
       "type": "node",
@@ -23,7 +20,7 @@
       "sourceMaps": true,
       "args": [
         "/Users/zouyoushun/Project/angular-spec-generator/test-spec",
-        "--type=c",
+        "--type=c"
       ]
     },
     {
@@ -34,7 +31,7 @@
       "sourceMaps": true,
       "args": [
         "/Users/zouyoushun/Project/angular-spec-generator/test-spec",
-        "--type=d",
+        "--type=d"
       ]
     },
     {
@@ -45,7 +42,7 @@
       "sourceMaps": true,
       "args": [
         "/Users/zouyoushun/Project/angular-spec-generator/test-spec",
-        "--type=s",
+        "--type=s"
       ]
     },
     {
@@ -56,7 +53,7 @@
       "sourceMaps": true,
       "args": [
         "/Users/zouyoushun/Project/angular-spec-generator/test-spec",
-        "--type=p",
+        "--type=p"
       ]
     },
     {
@@ -67,7 +64,7 @@
       "sourceMaps": true,
       "args": [
         "/Users/zouyoushun/Project/angular-spec-generator/test-spec",
-        "--type=g",
+        "--type=g"
       ]
     },
     {
@@ -78,8 +75,8 @@
       "sourceMaps": true,
       "args": [
         "/Users/zouyoushun/Project/angular-spec-generator/test-spec",
-        "--type=gsdf",
+        "--type=gsdf"
       ]
-    },
+    }
   ]
 }
