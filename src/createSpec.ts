@@ -46,10 +46,15 @@ export const createSpec = async (array: SpecType[], isforce: boolean) => {
         const params: string = parameters.params.length
           ? parameters.params.join(', ')
           : null;
+        const providers: string = parameters.providers.length
+          ? parameters.providers.join(', ')
+          : null;
+
         const content = format(template, {
           bigName: className,
           name: file.name,
           imports,
+          providers,
           lets,
           assigns,
           params,
@@ -65,12 +70,14 @@ export const createSpec = async (array: SpecType[], isforce: boolean) => {
 function findParameters(
   fileContext: string
 ): {
+  providers: string[];
   imports: string[];
   lets: string[];
   assigns: string[];
   params: string[];
 } {
   const result = {
+    providers: [],
     imports: [],
     lets: [],
     assigns: [],
@@ -99,6 +106,9 @@ function findParameters(
         if (className) {
           switch (className) {
             case 'Router':
+              result.providers.push(
+                '{ provide: Router, useValue: new MockRouter() }'
+              );
               result.imports.push(`import { Router } from '@angular/router';`);
               result.imports.push(`import { MockRouter } from 'testing';`);
               result.lets.push('let router: Router;');
@@ -109,6 +119,7 @@ function findParameters(
               break;
 
             case 'DeviceDetectorService':
+              result.providers.push('DeviceDetectorService');
               result.imports.push(
                 `import { DeviceDetectorService } from 'ngx-device-detector';`
               );
@@ -120,6 +131,9 @@ function findParameters(
               break;
 
             case 'ActivatedRoute':
+              result.providers.push(
+                '{ provide: ActivatedRoute, useValue: new ActivatedRouteStub() }'
+              );
               result.imports.push(
                 `import { ActivatedRouteStub } from 'testing';`
               );
